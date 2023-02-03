@@ -1,5 +1,5 @@
 import { IContent } from '../models/icontent';
-export const listOfPokemon: IContent[] = [
+export const POKEMON: IContent[] = [
 {
       id: 1,
       name: 'Empoleon',
