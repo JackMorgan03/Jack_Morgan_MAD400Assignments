@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IContent } from './models/icontent';
+import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
   selector: 'app-root',
@@ -53,4 +54,14 @@ export class AppComponent {
   //   tags: ["Electric", "#0181"]
   // }
   
+
+  content: IContent[] = [];
+
+  constructor(private contentService: PokemonService){
+
+  }
+
+  ngOnInit(){
+    this.contentService.getContent().subscribe(content=>this.content = content);
+  }
 }
