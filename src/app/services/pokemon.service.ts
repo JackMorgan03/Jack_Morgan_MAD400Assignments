@@ -15,13 +15,23 @@ export class PokemonService {
   }
 
 
-  // getContentItem(index: number): Observable<IContent>{
-  //   POKEMON.forEach(pokemon => {
-  //     if(pokemon.id == index){
-  //       return of(pokemon)
-  //     }
-  //   });
-  // }
+  getContentItem(id: number): Observable<IContent>{
+    let myPokemon: IContent = {
+      id: -1,
+      name: "",
+      author: "",
+      type: ""
+    };
+    POKEMON.find(pokemon =>{
+      if(pokemon.id = id){
+        myPokemon = pokemon;
+        return pokemon
+        }else{
+        return null;
+      }
+    })
+    return of(myPokemon);
+  }
 
   createItem(pokemon: IContent): Observable<IContent[]>{
     POKEMON.push(pokemon);
@@ -29,21 +39,26 @@ export class PokemonService {
   }
 
   updateItem(pokemon: IContent): Observable<IContent[]>{
-      POKEMON.forEach(poke=>{
-        if (pokemon.id = poke.id){
-          pokemon = poke
-        }
-      })
-      return of(POKEMON);
+    let indexOfPokemonToUpdate = POKEMON.findIndex(poke => {
+      return poke.id = pokemon.id;
+    })  
+    POKEMON[indexOfPokemonToUpdate] = pokemon;
+    return of(POKEMON);
   }
 
-  deleteItem(id:number){
-    POKEMON.forEach(removePokemon => {
-      if(removePokemon.id = id){
-        POKEMON.splice(removePokemon.id, 1)
-        return removePokemon;
+  deleteItem(id:number): Observable<IContent>{
+    let deletePokemon: IContent = {
+      id: -1,
+      name: "",
+      author: "",
+      type: ""
+    };
+    for(let i = 0; i < POKEMON.length; i++){
+      if(POKEMON[i].id == id){
+        deletePokemon == POKEMON[i]
+        delete POKEMON[i];
       }
-      return console.log("Not this one");
-    });
+    }
+    return of(deletePokemon)
   }
 }

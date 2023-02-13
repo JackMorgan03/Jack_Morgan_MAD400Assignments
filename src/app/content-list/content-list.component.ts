@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IContent } from '../models/icontent';
 import { PokemonService } from '../services/pokemon.service';
 
@@ -7,7 +7,7 @@ import { PokemonService } from '../services/pokemon.service';
   templateUrl: './content-list.component.html',
   styleUrls: ['./content-list.component.scss']
 })
-export class ContentListComponent {
+export class ContentListComponent implements OnInit{
   content: IContent[] = [];
 
   constructor(private contentService: PokemonService){

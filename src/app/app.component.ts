@@ -1,14 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IContent } from './models/icontent';
 import { PokemonService } from 'src/app/services/pokemon.service';
+import { ContentListItemComponent } from './content-list-item/content-list-item.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'J_Morgan_FavoritePokemon';
+  singlePokemon?: IContent;
+
+  constructor(private PokemonService: PokemonService){
+      
+  }
+
+  ngOnInit(): void{
+    this.PokemonService.getContentItem(1).subscribe((pokemon: IContent)=>{
+      this.singlePokemon = pokemon;
+  })
+  }
   //Empoleon - 
   //Gengar
   //Crobat
@@ -53,15 +65,5 @@ export class AppComponent {
   //   type: "Electric",
   //   tags: ["Electric", "#0181"]
   // }
-  
 
-  content: IContent[] = [];
-
-  constructor(private contentService: PokemonService){
-
-  }
-
-  ngOnInit(){
-    this.contentService.getContent().subscribe(content=>this.content = content);
-  }
 }
