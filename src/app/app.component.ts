@@ -11,6 +11,7 @@ import { ContentListItemComponent } from './content-list-item/content-list-item.
 export class AppComponent implements OnInit{
   title = 'J_Morgan_FavoritePokemon';
   singlePokemon?: IContent;
+  secondPokemon?: IContent;
 
   constructor(private PokemonService: PokemonService){
       
@@ -19,6 +20,9 @@ export class AppComponent implements OnInit{
   ngOnInit(): void{
     this.PokemonService.getContentItem(1).subscribe((pokemon: IContent)=>{
       this.singlePokemon = pokemon;
+
+      this.PokemonService.getContentItem(1).subscribe((pokemon: IContent)=>{
+        this.secondPokemon = pokemon;
   })
   }
   //Empoleon - 
