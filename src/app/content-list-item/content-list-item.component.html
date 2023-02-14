@@ -1,7 +1,5 @@
-<h2>{{contentItem?.name}}</h2>
+<h2 [routerLink]="contentItem!.id + ''">{{contentItem?.name}}</h2>
 <img src="{{contentItem?.imgSrc}}">
-<p>{{contentItem?.description}}</p>
-<p>{{contentItem?.author}}</p>
 <p>{{contentItem?.type}}</p>
 
 
