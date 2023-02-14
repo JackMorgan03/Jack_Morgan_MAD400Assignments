@@ -1,1 +1,7 @@
-<p>content-search works!</p>
+<label>
+    Item ID: <input type="number" #customIdNumberInput>
+  </label>
+  <button (click)="getNewPokemon(customIdNumberInput.value)">Search</button>
+
+
+<app-content-list-item [contentItem]="singlePokemon"></app-content-list-item>

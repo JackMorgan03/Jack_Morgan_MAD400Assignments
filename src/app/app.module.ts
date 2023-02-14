@@ -19,8 +19,8 @@ import { ContentSearchComponent } from './content-search/content-search.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

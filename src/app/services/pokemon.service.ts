@@ -18,7 +18,7 @@ export class PokemonService {
   getContentItem(id: number): Observable<IContent>{
     let myPokemon: IContent = {
       id: -1,
-      name: "",
+      name: "Error, no Pokemon found at this id",
       author: "",
       type: ""
     };
@@ -27,7 +27,7 @@ export class PokemonService {
         myPokemon = pokemon;
         return pokemon
         }else{
-        return null;
+        return of(myPokemon);
       }
     })
     return of(myPokemon);

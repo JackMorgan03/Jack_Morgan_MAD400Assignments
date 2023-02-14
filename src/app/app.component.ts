@@ -15,12 +15,15 @@ export class AppComponent implements OnInit{
   constructor(private PokemonService: PokemonService){
       
   }
-
-  ngOnInit(): void{
-    this.PokemonService.getContentItem(1).subscribe((pokemon: IContent)=>{
-      this.singlePokemon = pokemon;
-  })
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
+
+  // ngOnInit(): void{
+  //   this.PokemonService.getContentItem(1).subscribe((pokemon: IContent)=>{
+  //     this.singlePokemon = pokemon;
+  // })
+  // }
   //Empoleon - 
   //Gengar
   //Crobat
