@@ -1,4 +1,4 @@
-<h2 [routerLink]="contentItem!.id + ''">{{contentItem?.name}}</h2>
+<h2><a [routerLink]="'/content/' + contentItem!.id + ''">{{contentItem?.name}}</a></h2>
 <img src="{{contentItem?.imgSrc}}">
 <p>{{contentItem?.type}}</p>
 

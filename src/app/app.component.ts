@@ -8,16 +8,9 @@ import { ContentListItemComponent } from './content-list-item/content-list-item.
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent{
   title = 'J_Morgan_FavoritePokemon';
-  singlePokemon?: IContent;
 
-  constructor(private PokemonService: PokemonService){
-      
-  }
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
 
   // ngOnInit(): void{
   //   this.PokemonService.getContentItem(1).subscribe((pokemon: IContent)=>{

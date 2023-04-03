@@ -16,21 +16,21 @@ export class PokemonService {
 
 
   getContentItem(id: number): Observable<IContent>{
-    let myPokemon: IContent = {
+    let noPokemon: IContent ={
       id: -1,
-      name: "Error, no Pokemon found at this id",
-      author: "",
-      type: ""
-    };
-    POKEMON.find(pokemon =>{
-      if(pokemon.id = id){
-        myPokemon = pokemon;
-        return pokemon
-        }else{
-        return of(myPokemon);
+      name: 'Invalid Input!',
+      imgSrc: '',
+      description: '',
+      author: '',
+      type: ''
+
+    }
+    for (let i = 0; i < POKEMON.length; i++){
+      if (POKEMON[i].id == id) {
+        noPokemon = POKEMON[i];
       }
-    })
-    return of(myPokemon);
+    }
+    return of(noPokemon);
   }
 
   createItem(pokemon: IContent): Observable<IContent[]>{

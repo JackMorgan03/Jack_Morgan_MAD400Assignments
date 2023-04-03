@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { single } from 'rxjs';
 import { IContent } from '../models/icontent';
 import { PokemonService } from '../services/pokemon.service';
 
@@ -11,8 +12,11 @@ export class ContentSearchComponent implements OnInit{
 
 
   singlePokemon?: IContent;
+  searchDidNotWork: boolean;
 
-  constructor(private pokemonService : PokemonService){}
+  constructor(private pokemonService : PokemonService){
+    this.searchDidNotWork = false;
+  }
   
   
   ngOnInit(): void {
@@ -20,8 +24,12 @@ export class ContentSearchComponent implements OnInit{
   }
 
   getNewPokemon(newIdNum: string): void{
-      this.pokemonService.getContentItem(Number(newIdNum)).subscribe((pokemon: IContent)=>{
+    if(this.singlePokemon?.id == -1){
+      this.searchDidNotWork = true
+    }  else{
+    this.pokemonService.getContentItem(Number(newIdNum)).subscribe((pokemon: IContent)=>{
           this.singlePokemon = pokemon;
-        }
+    } 
       )}
+  }
 }

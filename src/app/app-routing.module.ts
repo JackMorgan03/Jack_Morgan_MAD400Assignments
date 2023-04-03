@@ -10,10 +10,9 @@ const routes: Routes =[
       path: "",
       redirectTo: "/content",
       pathMatch: "full"
-      
     },
     {
-      path: "/content",
+      path: "content",
       component: ContentListComponent
     },
     {
@@ -21,7 +20,7 @@ const routes: Routes =[
       component: ContentListItemPageComponent
     },
     {
-      path:"/search",
+      path:"search",
       component: ContentSearchComponent
     }
 ]

@@ -3,5 +3,7 @@
   </label>
   <button (click)="getNewPokemon(customIdNumberInput.value)">Search</button>
 
-
+  <div>
+    <p *ngIf="searchDidNotWork">This is not a valid content item!</p>
+  </div>
 <app-content-list-item [contentItem]="singlePokemon"></app-content-list-item>

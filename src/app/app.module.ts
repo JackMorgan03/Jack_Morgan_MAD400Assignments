@@ -8,6 +8,7 @@ import { ContentListItemPageComponent } from './content-list-item-page/content-l
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { ContentSearchComponent } from './content-search/content-search.component';
+import { TopNavComponent } from './top-nav/top-nav.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ContentSearchComponent } from './content-search/content-search.componen
     ContentListComponent,
     ContentListItemComponent,
     ContentListItemPageComponent,
-    ContentSearchComponent
+    ContentSearchComponent,
+    TopNavComponent
   ],
   imports: [
     BrowserModule,
