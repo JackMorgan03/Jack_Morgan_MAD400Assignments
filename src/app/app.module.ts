@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { ContentSearchComponent } from './content-search/content-search.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
+import { FilterIContentPipe } from './filter-icontent.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TopNavComponent } from './top-nav/top-nav.component';
     ContentListItemComponent,
     ContentListItemPageComponent,
     ContentSearchComponent,
-    TopNavComponent
+    TopNavComponent,
+    FilterIContentPipe
   ],
   imports: [
     BrowserModule,
